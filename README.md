@@ -1,2 +1,2 @@
-# Data Structures algorithms
-Some basic data structures Algorithms 
+# Data Structures Algorithms
+Some basic data structures algorithms 
