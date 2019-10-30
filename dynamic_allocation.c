@@ -11,12 +11,19 @@ int main()
 	printf("Digite o tamanho do Vetor: \n");
 	scanf("%d", &size);
 
-	int vector[size];
-	while (1)
+	val = (int *) malloc(size * sizeof(int));//Function malloc returns a void pointer, conversion is necessary malloc(lenght of bytes allocated)
+	
+	for (int i = 0; i < size; ++i)
 	{
-		val = (int *) malloc(size * sizeof(int));//Function malloc returns a void pointer, conversion is necessary malloc(lenght of bytes allocated)
-		free(val); //Function free needs a pointer to the mem allocation to desalocate
-		printf("Let it go!\n");
+		printf("Digite um valor para a posição %d: \n", i + 1);
+		scanf("%d", &val[i]);
 	}
+	for (i = 0; i < size; ++i)
+	{
+		printf("Valor na posição %d: %d\n", i + 1, val[i]);
+	}
+
+	free(val); //Function free needs a pointer to the mem allocation to desalocate
+
 	return 0;
 }
