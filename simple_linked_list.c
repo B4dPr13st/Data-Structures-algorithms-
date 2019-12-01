@@ -15,43 +15,53 @@ typedef struct listCell
 }cell;
 
 //Function that removes head's elements
-void delete(cell **pReceived)
+void delete(cell **head)
 {
 	cell *current;
-	if ((*pReceived)->next == NULL)
+	if ((*head)->next == NULL)
 	{
 		printf("\nEmpty list!\n");
 	}
 	else
 	{
-		current = (*pReceived)->next;
-		(*pReceived)->next = current->next;
+		//Catching the pointer to the next node
+		current = (*head)->next;
+		//Catching the pointer next of the current node and atributing to the previous next node
+		(*head)->next = current->next;
 		free(current);
 	}
 }
 
 //Function to search/go through the list elements
-void search(cell **pReceived)
+void search(cell **head, int wanted)
 {
 	cell *current;
-	if ((*pReceived)->next == NULL)
+	if ((*head)->next == NULL)
 	{
 		printf("\nEmpty list!\n");
 	}
 	else
 	{
 		current = (cell *) malloc(sizeof(cell));
-		current = (*pReceived)->next;
+		current = (*head)->next;
 		while(current != NULL)
 		{
-			printf("\nValue: %d\n", current->item);
+			if (current->item == wanted)
+			{
+				printf("\nThe value was found!\nValue: %d\n", current->item);
+				return;
+			}
 			current = current->next;
+		}
+		if (current == NULL)
+		{
+			printf("\nThe value wasn't found!\n");
 		}
 	}
 }
 
 //function to insert in the start
-void add(cell **pReceived)
+void add(cell **head)
 {
 	cell *current;
 	int value;
@@ -59,39 +69,47 @@ void add(cell **pReceived)
 	scanf("%d", &value);
 	current = (cell *) malloc(sizeof(cell));
 	current->item = value;
-	current->next = (*pReceived)->next;
-	(*pReceived)->next = current;
+	//The new node turns into the list head
+	current->next = (*head)->next;
+	(*head)->next = current;
 }
 
 //Initialization of binded list
-void initList(cell **pReceived)
+void initList(cell **head)
 {
-	(*pReceived)->next = NULL;
+	(*head)->next = NULL;
+	(*head)->previous = NULL;
 }
 
 int main()
 {
-	cell *pList;
+	cell *head;
 	int option = 0;
-	pList = (cell *) malloc(sizeof(struct listCell));
-	initList(&pList);
+	int wanted;
+	head = (cell *) malloc(sizeof(struct listCell));
+	initList(&head);
 	for (;;)
 	{
+		printf("\n------------\n");
 		printf("\n1 - Insert");
 		printf("\n2 - Search");
 		printf("\n3 - Remove");
 		printf("\n4 - Exit\n");
+		printf("--------------\n");
+		printf("Select an option:\n");
 		scanf("%d", &option);
 		switch(option)
 		{
 			case 1:
-				add(&pList);
+				add(&head);
 				break;
 			case 2:
-				search(&pList);
+				printf("\nEnter the value that you want to find:\n");
+				scanf("%d", &wanted);
+				search(&head, wanted);
 				break;
 			case 3:
-				delete(&pList);
+				delete(&head);
 				break;
 			case 4:
 				exit(0);
