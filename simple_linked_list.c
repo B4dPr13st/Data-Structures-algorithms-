@@ -15,7 +15,7 @@ typedef struct listCell
 }cell;
 
 //Function that removes head's elements
-void delete(cell **head)
+void rem(cell **head)
 {
 	cell *current;
 	if ((*head)->next == NULL)
@@ -26,9 +26,34 @@ void delete(cell **head)
 	{
 		//Catching the pointer to the next node
 		current = (*head)->next;
-		//Catching the pointer next of the current node and atributing to the previous next node
+		//Catching the pointer next of the current node and atributing to the previous node
 		(*head)->next = current->next;
+		//Deallocating the memory of the node
 		free(current);
+	}
+}
+
+//Function to search/go through the list elements
+void list_show(cell **head)
+{
+	cell *current;
+	if ((*head)->next == NULL)
+	{
+		printf("\nEmpty list!\n");
+	}
+	else
+	{
+		current = (cell *) malloc(sizeof(cell));
+		current = (*head)->next;
+		while(current != NULL)
+		{
+			if (current->next != NULL)
+			{
+				printf("\nList item: %d\n", current->item);
+			}
+			//The actual node receives the next node pointer
+			current = current->next;
+		}
 	}
 }
 
@@ -78,7 +103,6 @@ void add(cell **head)
 void initList(cell **head)
 {
 	(*head)->next = NULL;
-	(*head)->previous = NULL;
 }
 
 int main()
@@ -93,8 +117,9 @@ int main()
 		printf("\n------------\n");
 		printf("\n1 - Insert");
 		printf("\n2 - Search");
-		printf("\n3 - Remove");
-		printf("\n4 - Exit\n");
+		printf("\n3 - Show list items");
+		printf("\n4 - Remove");
+		printf("\n5 - Exit\n");
 		printf("--------------\n");
 		printf("Select an option:\n");
 		scanf("%d", &option);
@@ -109,9 +134,12 @@ int main()
 				search(&head, wanted);
 				break;
 			case 3:
-				delete(&head);
+				list_show(&head);
 				break;
 			case 4:
+				rem(&head);
+				break;
+			case 5:
 				exit(0);
 		}
 	}
