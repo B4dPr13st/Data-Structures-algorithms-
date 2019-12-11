@@ -4,71 +4,67 @@
 #include <stdlib.h>
 
 /*Struct that defines the list, remembering that 
-the instruction: struct listCell *next
+the instruction: struct bindList *next
 is a autoref struct, in that case is a struct that
 points to the next struct*/
 
-typedef struct listCell
+typedef struct bindList
 {
 	int item;
-	struct listCell *next;
-}cell;
+	struct bindList *next;
+}NODE;
 
 //Function that removes head's elements
-void rem(cell **head)
+void rem(NODE *head)
 {
-	cell *current;
-	if ((*head)->next == NULL)
+	NODE *current = head;
+	if (head->next == NULL)
 	{
 		printf("\nEmpty list!\n");
 	}
 	else
 	{
-		//Catching the pointer to the next node
-		current = (*head)->next;
-		//Catching the pointer next of the current node and atributing to the previous node
-		(*head)->next = current->next;
-		//Deallocating the memory of the node
+		//Catching the pointer to the next NODE
+		current = head->next;
+		//Catching the pointer next of the current NODE and atributing to the previous NODE
+		head->next = current->next;
+		//Deallocating the memory of the NODE
 		free(current);
 	}
 }
 
 //Function to search/go through the list elements
-void list_show(cell **head)
+void list_show(NODE *head)
 {
-	cell *current;
-	if ((*head)->next == NULL)
+	NODE *current = head;
+	if (head->next == NULL)
 	{
 		printf("\nEmpty list!\n");
 	}
 	else
 	{
-		current = (cell *) malloc(sizeof(cell));
-		current = (*head)->next;
 		while(current != NULL)
 		{
 			if (current->next != NULL)
 			{
 				printf("\nList item: %d\n", current->item);
 			}
-			//The actual node receives the next node pointer
+			//The actual NODE receives the next NODE pointer
 			current = current->next;
 		}
 	}
 }
 
 //Function to search/go through the list elements
-void search(cell **head, int wanted)
+void search(NODE *head, int wanted)
 {
-	cell *current;
-	if ((*head)->next == NULL)
+	NODE *current = head;
+	if (head->next == NULL)
 	{
 		printf("\nEmpty list!\n");
 	}
 	else
 	{
-		current = (cell *) malloc(sizeof(cell));
-		current = (*head)->next;
 		while(current != NULL)
 		{
 			if (current->item == wanted)
@@ -86,32 +82,31 @@ void search(cell **head, int wanted)
 }
 
 //function to insert in the start
-void add(cell **head)
+NODE* add(NODE *head)
 {
-	cell *current;
+	NODE *current;
 	int value;
 	printf("\nPut the value to insert:\n");
 	scanf("%d", &value);
-	current = (cell *) malloc(sizeof(cell));
+	current = (NODE*) malloc(sizeof(NODE));
 	current->item = value;
-	//The new node turns into the list head
-	current->next = (*head)->next;
-	(*head)->next = current;
+	//The new NODE turns into the list head
+	current->next = head;
+	return head;
 }
 
 //Initialization of binded list
-void initList(cell **head)
+NODE* initList(NODE *head)
 {
-	(*head)->next = NULL;
+	return NULL;
 }
 
 int main()
 {
-	cell *head;
+	NODE *head;
 	int option = 0;
 	int wanted;
-	head = (cell *) malloc(sizeof(struct listCell));
-	initList(&head);
+	head = initList(head);
 	for (;;)
 	{
 		printf("\n------------\n");
@@ -131,13 +126,13 @@ int main()
 			case 2:
 				printf("\nEnter the value that you want to find:\n");
 				scanf("%d", &wanted);
-				search(&head, wanted);
+				search(head, wanted);
 				break;
 			case 3:
-				list_show(&head);
+				list_show(head);
 				break;
 			case 4:
-				rem(&head);
+				rem(head);
 				break;
 			case 5:
 				exit(0);
