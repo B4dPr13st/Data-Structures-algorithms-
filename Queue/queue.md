@@ -77,14 +77,14 @@ void enqueue(myQueue *queue, int item)
 
 **Python** Example:
 ```Python
-    def EnQueue(self, item):
-        if self.IsFull():
-            print("Full")
-            return
-        self.rear = (self.rear + 1) % (self.capacity)
-        self.Q[self.rear] = item
-        self.size += 1
-        print("Enqueued", str(item))
+def EnQueue(self, item):
+    if self.IsFull():
+        print("Full")
+        return
+    self.rear = (self.rear + 1) % (self.capacity)
+    self.Q[self.rear] = item
+    self.size += 1
+    print("Enqueued", str(item))
 ```
 
 #### Dequeue
@@ -113,14 +113,14 @@ int dequeue(myQueue *queue)
 
 **Python** Example:
 ```Python
-    def DeQueue(self):
-        if self.IsEmpty():
-            print("Empty")
-            return
+def DeQueue(self):
+    if self.IsEmpty():
+        print("Empty")
+        return
 
-        print("Dequeued", str(self.Q[self.front]))
-        self.front = (self.front + 1) % (self.capacity)
-        self.size -= 1
+    print("Dequeued", str(self.Q[self.front]))
+    self.front = (self.front + 1) % (self.capacity)
+    self.size -= 1
 ```
 
 ## Complexity analysis and comparisons
