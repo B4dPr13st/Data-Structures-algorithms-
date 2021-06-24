@@ -1,5 +1,6 @@
 MAX_Q_SIZE = 100
 
+#Class used for queue implementation
 class MyQueue():
     def __init__(self, capacity=MAX_Q_SIZE):
         self.front = self.size = 0
@@ -20,14 +21,14 @@ class MyQueue():
         self.rear = (self.rear + 1) % (self.capacity)
         self.Q[self.rear] = item
         self.size += 1
-        print("Enqueued to queue", str(item))
+        print("Enqueued", str(item))
 
     def DeQueue(self):
         if self.IsEmpty():
             print("Empty")
             return
 
-        print("Dequeued from queue", str(self.Q[self.front]))
+        print("Dequeued", str(self.Q[self.front]))
         self.front = (self.front + 1) % (self.capacity)
         self.size -= 1
 
