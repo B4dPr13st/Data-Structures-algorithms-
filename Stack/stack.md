@@ -190,3 +190,11 @@ of implementing **Stacks**, I hope you enjoyed it! :D
 Good luck with your studies!
 
 ![](https://media.giphy.com/media/ZBVhKIDgts1eHYdT7u/giphy.gif)
+
+## References
+
+[Stacks as Data Structures](https://www.treinaweb.com.br/blog/o-que-e-e-como-funciona-a-estrutura-de-dados-pilha) <br>
+[Stacks in Python](https://algoritmosempython.com.br/cursos/algoritmos-python/estruturas-dados/pilhas/) <br>
+[Stacks](http://sites.poli.usp.br/p/fabio.cozman/Didatico/Comp/Material/estruturas.pdf) <br>
+[Stacks in C and Python](https://www.geeksforgeeks.org/stack-data-structure-introduction-program/) <br>
+[Stacks and Big O](https://www.bigocheatsheet.com/) <br>

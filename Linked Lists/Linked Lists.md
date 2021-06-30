@@ -857,3 +857,16 @@ This was a short summary and demonstration of implementing linked lists in a sim
 Good luck with your studies!
 
 ![](https://media.giphy.com/media/79ZFYdMsStRYI/giphy.gif)  
+
+## References
+
+[Singly-Linked Lists - Python and C](https://www.geeksforgeeks.org/linked-list-set-1-introduction/) <br>
+[Singly-Linked Lists - Python](https://algoritmosempython.com.br/cursos/algoritmos-python/estruturas-dados/listas-encadeadas/) <br>
+[Linked Lists](https://blog.pantuza.com/artigos/tipos-abstratos-de-dados-lista-encadeada-linked-list) <br>
+[Singly-Linked Lists - Deletion](https://www.geeksforgeeks.org/linked-list-set-3-deleting-node/) <br>
+[Singly-Linked Lists - Insertion](https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/) <br>
+[Doubly-Linked Lists - Python and C](https://www.geeksforgeeks.org/doubly-linked-list/) <br>
+[Reverse a Linked List](https://www.geeksforgeeks.org/reverse-a-linked-list/) <br>
+[Doubly-Linked Lists - Deletion](https://www.geeksforgeeks.org/delete-a-node-in-a-doubly-linked-list/) <br>
+[Merge Sort for Doubly-Linked List](https://www.geeksforgeeks.org/merge-sort-for-doubly-linked-list/) <br>
+[Selection Sort for Singly-Linked List](https://www.geeksforgeeks.org/iterative-selection-sort-for-linked-list/) <br>

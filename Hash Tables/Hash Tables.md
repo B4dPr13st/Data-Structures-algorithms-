@@ -233,3 +233,11 @@ This was a short summary and demonstration of implementing Hash Tables, I hope y
 Good luck with your studies!
 
 ![](https://media.giphy.com/media/fxe8v45NNXFd4jdaNI/giphy.gif)
+
+## References
+
+[Hash Tables - João Arthur Brunet](https://joaoarthurbm.github.io/eda/posts/hashtable/) <br>
+[Hash Tables - Theory](https://www.ime.usp.br/~pf/estruturas-de-dados/aulas/st-hash.html) <br>
+[Hash Tables - Python](http://blog.chapagain.com.np/hash-table-implementation-in-python-data-structures-algorithms/) <br>
+[Hash Tables - Big O](https://www.bigocheatsheet.com/) <br>
+[Hash Tables - Python and C](https://www.geeksforgeeks.org/index-mapping-or-trivial-hashing-with-negatives-allowed/) <br>

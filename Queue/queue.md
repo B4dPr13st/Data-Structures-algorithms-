@@ -138,3 +138,11 @@ This was a short summary and demonstration of implementing **Queues**, I hope yo
 Good luck with your studies!
 
 ![](https://media.giphy.com/media/LFEjnqmVmbKk8/giphy.gif)
+
+## References
+
+[Queue as data structure](https://www.treinaweb.com.br/blog/o-que-e-e-como-funciona-a-estrutura-de-dados-fila) <br>
+[Queues in Python](https://algoritmosempython.com.br/cursos/algoritmos-python/estruturas-dados/filas/) <br>
+[Queues and Big O - Python and C](https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/) <br>
+[Queues](http://sites.poli.usp.br/p/fabio.cozman/Didatico/Comp/Material/estruturas.pdf) <br>
+[Big O Queue](https://www.bigocheatsheet.com/) <br>
