@@ -360,4 +360,4 @@ Good luck with your studies!
 [DFS - Theory](https://www.ime.usp.br/~pf/algoritmos_para_grafos/aulas/dfs.html) <br>
 [DFS Pseudocode](http://www.cs.toronto.edu/~heap/270F02/node36.html) <br>
 [Big O Graph Operations](https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1/) <br>
-[Graph Applications](Graph Applications)
+[Graph Applications](https://medium.com/xp-inc/grafos-teoria-e-aplica%C3%A7%C3%B5es-2a87444df855)
