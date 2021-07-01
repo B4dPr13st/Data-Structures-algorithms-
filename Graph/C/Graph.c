@@ -117,14 +117,14 @@ int is_empty(myQueue *queue)
 //Starting the graph
 Graph* start_graph()
 {
-	Graph *Graph = (Graph*) malloc(sizeof(Graph));
+	Graph *graph = (Graph*)malloc(sizeof(Graph));
 	int i;
 	for (i = 0; i < MAX_SIZE; i++)
 	{
-		Graph->vertices[i] = NULL;
-		Graph->visited[i] = 0;
+		graph->vertices[i] = NULL;
+		graph->visited[i] = 0;
 	}
-	return Graph;
+	return graph;
 }
 
 //Creating the adj list
@@ -168,7 +168,7 @@ void depth_first_search(Graph *Graph, int source)
 }
 
 //Breadth firest search function
-void breadth_first_search(Graph *Graph, int souce)
+void breadth_first_search(Graph *Graph, int source)
 {
 	myQueue *queue = crete_queue();
 	int dequeued;
@@ -179,7 +179,7 @@ void breadth_first_search(Graph *Graph, int souce)
 	while (!is_empty(queue))
 	{
 		dequeued = dequeue(queue);
-		printf("Visited: %d", dequeued)
+		printf("Visited: %d", dequeued);
 
 		listAdj *list_access = Graph->vertices[dequeued];
 		while (list_access != NULL)
